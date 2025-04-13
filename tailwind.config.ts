@@ -136,6 +136,33 @@ export default {
 					'100%': {
 						transform: 'translateX(100%)'
 					}
+				},
+				'tech-scan': {
+					'0%': {
+						transform: 'translateY(100%)',
+						opacity: '0'
+					},
+					'10%, 90%': { 
+						opacity: '0.5' 
+					},
+					'100%': {
+						transform: 'translateY(-100%)',
+						opacity: '0'
+					}
+				},
+				'pulse-ring': {
+					'0%': {
+						transform: 'scale(0.8)',
+						opacity: '0.8'
+					},
+					'50%': {
+						transform: 'scale(1)',
+						opacity: '0.4'
+					},
+					'100%': {
+						transform: 'scale(0.8)',
+						opacity: '0.8'
+					}
 				}
 			},
 			animation: {
@@ -146,7 +173,9 @@ export default {
 				'float': 'float 8s ease-in-out infinite',
 				'glow': 'glow 2s ease-in-out infinite',
 				'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
-				'shimmer': 'shimmer 2s ease-in-out'
+				'shimmer': 'shimmer 2s ease-in-out',
+				'tech-scan': 'tech-scan 3s ease-in-out infinite',
+				'pulse-ring': 'pulse-ring 3s ease-in-out infinite',
 			}
 		}
 	},
