@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowUp, Mail, MapPin, Phone } from 'lucide-react';
+import { ArrowUp, Mail, MapPin, Phone, Facebook, Instagram, Twitter, Github, Youtube, Linkedin } from 'lucide-react';
 import { Button } from './ui/button';
 
 const Footer = () => {
@@ -195,19 +195,56 @@ const Footer = () => {
         
         <div className="border-t border-learnsphere-secondary/10 mt-6 pt-6 text-center">
           <div className="flex justify-center space-x-6 mb-4">
-            {['facebook', 'twitter', 'linkedin', 'instagram', 'youtube'].map((social) => (
-              <a 
-                key={social} 
-                href={`https://${social}.com`} 
-                className="p-2 rounded-full bg-learnsphere-card/80 border border-learnsphere-secondary/20 text-learnsphere-gray hover:text-cyan-400 hover:border-cyan-500/50 hover:shadow-[0_0_8px_rgba(0,200,255,0.3)] transition-all duration-300"
-                aria-label={social}
-              >
-                <div className="w-4 h-4 flex items-center justify-center">
-                  {/* This would typically be an icon */}
-                  <div className="w-full h-full rounded-sm bg-current"></div>
-                </div>
-              </a>
-            ))}
+            {/* Social Media Icons */}
+            <a 
+              href="https://facebook.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="p-2 rounded-full bg-learnsphere-card/80 border border-learnsphere-secondary/20 text-learnsphere-gray hover:text-cyan-400 hover:border-cyan-500/50 hover:shadow-[0_0_8px_rgba(0,200,255,0.3)] transition-all duration-300 group"
+              aria-label="Facebook"
+            >
+              <Facebook size={18} className="group-hover:animate-pulse" />
+            </a>
+            
+            <a 
+              href="https://twitter.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="p-2 rounded-full bg-learnsphere-card/80 border border-learnsphere-secondary/20 text-learnsphere-gray hover:text-cyan-400 hover:border-cyan-500/50 hover:shadow-[0_0_8px_rgba(0,200,255,0.3)] transition-all duration-300 group"
+              aria-label="Twitter"
+            >
+              <Twitter size={18} className="group-hover:animate-pulse" />
+            </a>
+            
+            <a 
+              href="https://instagram.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="p-2 rounded-full bg-learnsphere-card/80 border border-learnsphere-secondary/20 text-learnsphere-gray hover:text-cyan-400 hover:border-cyan-500/50 hover:shadow-[0_0_8px_rgba(0,200,255,0.3)] transition-all duration-300 group"
+              aria-label="Instagram"
+            >
+              <Instagram size={18} className="group-hover:animate-pulse" />
+            </a>
+            
+            <a 
+              href="https://github.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="p-2 rounded-full bg-learnsphere-card/80 border border-learnsphere-secondary/20 text-learnsphere-gray hover:text-cyan-400 hover:border-cyan-500/50 hover:shadow-[0_0_8px_rgba(0,200,255,0.3)] transition-all duration-300 group"
+              aria-label="GitHub"
+            >
+              <Github size={18} className="group-hover:animate-pulse" />
+            </a>
+            
+            <a 
+              href="https://linkedin.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="p-2 rounded-full bg-learnsphere-card/80 border border-learnsphere-secondary/20 text-learnsphere-gray hover:text-cyan-400 hover:border-cyan-500/50 hover:shadow-[0_0_8px_rgba(0,200,255,0.3)] transition-all duration-300 group"
+              aria-label="LinkedIn"
+            >
+              <Linkedin size={18} className="group-hover:animate-pulse" />
+            </a>
           </div>
           
           <p className="text-learnsphere-gray text-sm relative inline-block group">
