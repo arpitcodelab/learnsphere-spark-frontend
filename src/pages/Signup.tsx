@@ -6,10 +6,12 @@ import Footer from '@/components/Footer';
 
 const Signup = () => {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-learnsphere-primary">
       <Header />
-      <main className="flex-grow pt-20">
-        <SignupForm />
+      <main className="flex-grow">
+        <div className="pt-20">
+          <SignupForm />
+        </div>
       </main>
       <Footer />
     </div>

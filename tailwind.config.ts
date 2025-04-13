@@ -128,6 +128,14 @@ export default {
 					'50%': {
 						boxShadow: '0 0 20px rgba(0, 100, 200, 0.8)'
 					}
+				},
+				'shimmer': {
+					'0%': {
+						transform: 'translateX(-100%)'
+					},
+					'100%': {
+						transform: 'translateX(100%)'
+					}
 				}
 			},
 			animation: {
@@ -137,7 +145,8 @@ export default {
 				'scale-up': 'scale-up 0.3s ease-out',
 				'float': 'float 8s ease-in-out infinite',
 				'glow': 'glow 2s ease-in-out infinite',
-				'pulse-glow': 'pulse-glow 2s ease-in-out infinite'
+				'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
+				'shimmer': 'shimmer 2s ease-in-out'
 			}
 		}
 	},
