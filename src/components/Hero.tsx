@@ -10,16 +10,32 @@ const Hero = () => {
   const fullText = "Master New Skills with LearnSphere";
   
   useEffect(() => {
-    if (displayText.length < fullText.length) {
-      const typingTimer = setTimeout(() => {
-        setDisplayText(fullText.substring(0, displayText.length + 1));
+    // Reset animation state when component mounts
+    setDisplayText('');
+    setIsTypingComplete(false);
+    
+    // Start the typing animation
+    const typeWriter = () => {
+      let i = 0;
+      const typingInterval = setInterval(() => {
+        if (i < fullText.length) {
+          setDisplayText(prev => prev + fullText.charAt(i));
+          i++;
+        } else {
+          clearInterval(typingInterval);
+          setIsTypingComplete(true);
+        }
       }, 100);
       
-      return () => clearTimeout(typingTimer);
-    } else {
-      setIsTypingComplete(true);
-    }
-  }, [displayText, fullText]);
+      return () => clearInterval(typingInterval);
+    };
+    
+    const timeoutId = setTimeout(typeWriter, 500); // Short delay before starting animation
+    
+    return () => {
+      clearTimeout(timeoutId);
+    };
+  }, []); // Only run once when component mounts
   
   return (
     <section className="pt-32 pb-24 bg-learnsphere-primary relative overflow-hidden">
@@ -35,9 +51,6 @@ const Hero = () => {
             {displayText}
             {!isTypingComplete && (
               <span className="inline-block w-1 h-8 ml-1 bg-learnsphere-secondary animate-pulse"></span>
-            )}
-            {isTypingComplete && (
-              <span className="text-learnsphere-secondary"></span>
             )}
           </h1>
           <p className="text-learnsphere-gray text-lg md:text-xl mb-10">
