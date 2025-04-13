@@ -6,6 +6,15 @@ import { Menu, X, Zap } from 'lucide-react';
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const scrollToPricing = (e) => {
+    e.preventDefault();
+    const pricingSection = document.getElementById('pricing');
+    if (pricingSection) {
+      pricingSection.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsOpen(false);
+  };
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-learnsphere-primary bg-opacity-60 backdrop-blur-md border-b border-learnsphere-secondary/30">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
@@ -20,9 +29,13 @@ const Header = () => {
 
         {/* Desktop Navigation with enhanced styling */}
         <nav className="hidden md:flex items-center space-x-6">
-          <Link to="/#pricing" className="relative text-learnsphere-white hover:text-cyan-300 transition-colors duration-300 after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-cyan-400/70 after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left">
+          <a 
+            href="#pricing" 
+            onClick={scrollToPricing}
+            className="relative text-learnsphere-white hover:text-cyan-300 transition-colors duration-300 after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-cyan-400/70 after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
+          >
             Pricing
-          </Link>
+          </a>
           <Link to="/signup" className="relative text-learnsphere-white hover:text-cyan-300 transition-colors duration-300 after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-cyan-400/70 after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left">
             Sign Up
           </Link>
@@ -47,13 +60,13 @@ const Header = () => {
       {isOpen && (
         <div className="md:hidden bg-learnsphere-tertiary/80 backdrop-blur-lg border-t border-learnsphere-secondary/30">
           <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
-            <Link 
-              to="/#pricing" 
+            <a 
+              href="#pricing" 
+              onClick={scrollToPricing}
               className="text-learnsphere-white py-2 border-b border-learnsphere-secondary/20 hover:text-cyan-300 transition-colors duration-300"
-              onClick={() => setIsOpen(false)}
             >
               Pricing
-            </Link>
+            </a>
             <Link 
               to="/signup" 
               className="text-learnsphere-white py-2 border-b border-learnsphere-secondary/20 hover:text-cyan-300 transition-colors duration-300"
