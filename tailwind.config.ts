@@ -163,6 +163,14 @@ export default {
 						transform: 'scale(0.8)',
 						opacity: '0.8'
 					}
+				},
+				'bounce': {
+					'0%, 100%': {
+						transform: 'translateY(0)'
+					},
+					'50%': {
+						transform: 'translateY(-25%)'
+					}
 				}
 			},
 			animation: {
@@ -176,6 +184,7 @@ export default {
 				'shimmer': 'shimmer 2s ease-in-out',
 				'tech-scan': 'tech-scan 3s ease-in-out infinite',
 				'pulse-ring': 'pulse-ring 3s ease-in-out infinite',
+				'bounce': 'bounce 1s ease-in-out infinite'
 			}
 		}
 	},
