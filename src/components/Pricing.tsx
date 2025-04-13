@@ -26,6 +26,20 @@ const PricingCard = ({
   isPopular, 
   icon 
 }: PlanProps) => {
+  // Define colors based on plan name
+  const getBadgeColors = () => {
+    switch(name) {
+      case "Core":
+        return "bg-blue-400/20 text-blue-400 border-blue-400/30";
+      case "Overdrive":
+        return "bg-green-400/20 text-green-400 border-green-400/30";
+      case "Team":
+        return "bg-purple-400/20 text-purple-400 border-purple-400/30";
+      default:
+        return "bg-learnsphere-tertiary/20";
+    }
+  };
+  
   return (
     <div 
       className={`bg-learnsphere-card/50 backdrop-blur-md border border-learnsphere-secondary/30 rounded-xl p-8 flex flex-col relative
@@ -41,7 +55,7 @@ const PricingCard = ({
         <Badge 
           variant="outline" 
           className={`uppercase text-xs font-semibold mb-2 
-          ${isPopular ? 'bg-learnsphere-secondary/20 text-learnsphere-secondary border-learnsphere-secondary/30' : 'bg-learnsphere-tertiary/20'}`}
+          ${isPopular ? 'bg-learnsphere-secondary/20 text-learnsphere-secondary border-learnsphere-secondary/30' : getBadgeColors()}`}
         >
           {name}
         </Badge>
