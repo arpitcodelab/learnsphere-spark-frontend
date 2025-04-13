@@ -10,13 +10,14 @@ const Hero = () => {
   const fullText = "Master New Skills with LearnSphere";
   
   useEffect(() => {
-    // Reset animation state when component mounts
-    setDisplayText('');
-    setIsTypingComplete(false);
-    
-    // Start the typing animation
-    const typeWriter = () => {
+    // Animation function that handles the typing effect
+    const startTypingAnimation = () => {
+      // Reset state for new animation cycle
+      setDisplayText('');
+      setIsTypingComplete(false);
+      
       let i = 0;
+      // Type each character one by one
       const typingInterval = setInterval(() => {
         if (i < fullText.length) {
           setDisplayText(prev => prev + fullText.charAt(i));
@@ -27,14 +28,32 @@ const Hero = () => {
         }
       }, 100);
       
-      return () => clearInterval(typingInterval);
+      return typingInterval;
     };
     
-    const timeoutId = setTimeout(typeWriter, 500); // Short delay before starting animation
+    // Start initial animation with a small delay
+    const initialDelay = setTimeout(() => {
+      const typingInterval = startTypingAnimation();
+      
+      // Set up the repeating animation cycle
+      const animationCycle = setInterval(() => {
+        // Wait for current typing to finish, then clear and restart
+        clearInterval(typingInterval);
+        setDisplayText('');
+        setIsTypingComplete(false);
+        
+        // Short pause before starting the next typing cycle
+        setTimeout(startTypingAnimation, 500);
+      }, 6000); // Repeat every 6 seconds
+      
+      // Clean up all intervals and timeouts on unmount
+      return () => {
+        clearInterval(typingInterval);
+        clearInterval(animationCycle);
+      };
+    }, 500);
     
-    return () => {
-      clearTimeout(timeoutId);
-    };
+    return () => clearTimeout(initialDelay);
   }, []); // Only run once when component mounts
   
   return (
