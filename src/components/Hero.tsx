@@ -42,7 +42,7 @@ const Hero = () => {
           </p>
           <Link
             to="/signup"
-            className="inline-flex items-center justify-center bg-gradient-to-r from-learnsphere-secondary/90 to-cyan-500/80 text-learnsphere-white px-8 py-4 text-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,62,145,0.6)] rounded-[60%] border border-learnsphere-secondary/30 group"
+            className="inline-flex items-center justify-center bg-gradient-to-r from-learnsphere-secondary/90 to-cyan-500/80 text-learnsphere-white px-8 py-4 text-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,62,145,0.6)] rounded-lg border border-learnsphere-secondary/30 group"
           >
             <span>Try for Free</span>
             <Zap className="ml-2 w-5 h-5 group-hover:animate-pulse" />
