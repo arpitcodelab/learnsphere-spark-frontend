@@ -28,7 +28,7 @@ const PricingCard = ({
 }: PlanProps) => {
   return (
     <div 
-      className={`bg-learnsphere-card border border-learnsphere-secondary/30 rounded-xl p-8 flex flex-col relative
+      className={`bg-learnsphere-card/50 backdrop-blur-md border border-learnsphere-secondary/30 rounded-xl p-8 flex flex-col relative
       ${isPopular ? 'border-learnsphere-secondary/70 scale-105 z-10' : ''} card-hover-effect`}
     >
       <div className="flex justify-center mb-4">
@@ -61,10 +61,10 @@ const PricingCard = ({
       <Link
         to="/signup"
         className={`mt-auto py-3 px-4 rounded-md text-center font-medium transition-all duration-300
-        flex items-center justify-center gap-2
+        flex items-center justify-center gap-2 backdrop-blur-sm
         ${isPopular 
-          ? 'bg-learnsphere-secondary text-learnsphere-white hover:bg-learnsphere-secondary/90' 
-          : 'bg-learnsphere-tertiary/50 text-learnsphere-white hover:bg-learnsphere-tertiary'
+          ? 'bg-learnsphere-secondary/90 text-learnsphere-white hover:bg-learnsphere-secondary/90' 
+          : 'bg-learnsphere-tertiary/60 text-learnsphere-white hover:bg-learnsphere-tertiary'
         }`}
       >
         <span className={`p-1 rounded-full ${isPopular ? 'bg-learnsphere-white/20' : 'bg-learnsphere-secondary/20'}`}>
@@ -75,7 +75,7 @@ const PricingCard = ({
       
       {isPopular && (
         <div className="absolute -top-3 left-0 right-0 flex justify-center">
-          <div className="bg-learnsphere-secondary text-xs uppercase font-semibold text-learnsphere-white py-1 px-3 rounded-full">
+          <div className="bg-learnsphere-secondary/80 backdrop-blur-sm text-xs uppercase font-semibold text-learnsphere-white py-1 px-3 rounded-full">
             Most Popular
           </div>
         </div>
@@ -138,10 +138,10 @@ const Pricing = () => {
 
   return (
     <section id="pricing" className="py-20 bg-learnsphere-primary relative overflow-hidden">
-      {/* Background elements */}
-      <div className="absolute inset-0 opacity-10 pointer-events-none">
-        <div className="absolute top-20 left-20 w-60 h-60 rounded-full bg-learnsphere-secondary blur-[100px]"></div>
-        <div className="absolute bottom-20 right-20 w-60 h-60 rounded-full bg-learnsphere-tertiary blur-[100px]"></div>
+      {/* Background elements with glassmorphism effect */}
+      <div className="absolute inset-0 backdrop-blur-sm bg-learnsphere-primary/50 pointer-events-none">
+        <div className="absolute top-20 left-20 w-60 h-60 rounded-full bg-learnsphere-secondary/70 blur-[100px]"></div>
+        <div className="absolute bottom-20 right-20 w-60 h-60 rounded-full bg-learnsphere-tertiary/70 blur-[100px]"></div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
@@ -154,10 +154,10 @@ const Pricing = () => {
 
         {/* Monthly/Annual Toggle */}
         <div className="flex justify-center mb-12">
-          <div className="inline-flex items-center p-1 bg-learnsphere-tertiary/50 rounded-md">
+          <div className="inline-flex items-center p-1 bg-learnsphere-tertiary/50 backdrop-blur-sm rounded-md">
             <button
               className={`py-2 px-6 rounded text-sm font-medium transition-all ${
-                !isAnnual ? 'bg-learnsphere-secondary text-learnsphere-white' : 'text-learnsphere-gray'
+                !isAnnual ? 'bg-learnsphere-secondary/90 text-learnsphere-white' : 'text-learnsphere-gray'
               }`}
               onClick={() => setIsAnnual(false)}
             >
@@ -165,7 +165,7 @@ const Pricing = () => {
             </button>
             <button
               className={`py-2 px-6 rounded text-sm font-medium transition-all ${
-                isAnnual ? 'bg-learnsphere-secondary text-learnsphere-white' : 'text-learnsphere-gray'
+                isAnnual ? 'bg-learnsphere-secondary/90 text-learnsphere-white' : 'text-learnsphere-gray'
               }`}
               onClick={() => setIsAnnual(true)}
             >
