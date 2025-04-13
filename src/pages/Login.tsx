@@ -30,9 +30,9 @@ const Login = () => {
     <div className="min-h-screen flex flex-col">
       <Header />
       <main className="flex-grow pt-20">
-        <div className="bg-gradient-to-b from-learnsphere-black to-learnsphere-blue/80 py-16">
+        <div className="bg-gradient-to-b from-learnsphere-primary to-learnsphere-tertiary/80 py-16">
           <div className="container mx-auto px-4">
-            <div className="max-w-md mx-auto bg-learnsphere-blue border border-learnsphere-red/30 rounded-lg p-8 shadow-lg">
+            <div className="max-w-md mx-auto bg-learnsphere-card border border-learnsphere-secondary/30 rounded-lg p-8 shadow-lg">
               <h2 className="text-2xl font-bold text-center mb-6">Welcome Back</h2>
               <form onSubmit={handleSubmit}>
                 <div className="mb-4">
@@ -43,7 +43,7 @@ const Login = () => {
                     type="email"
                     id="email"
                     name="email"
-                    className="w-full bg-learnsphere-black text-learnsphere-white border border-learnsphere-gray/30 rounded px-3 py-2 focus:outline-none focus:border-learnsphere-red"
+                    className="w-full bg-learnsphere-primary text-learnsphere-white border border-learnsphere-gray/30 rounded px-3 py-2 focus:outline-none focus:border-learnsphere-secondary"
                     placeholder="your@email.com"
                     required
                     value={formData.email}
@@ -55,7 +55,7 @@ const Login = () => {
                     <label htmlFor="password" className="block text-learnsphere-white">
                       Password
                     </label>
-                    <Link to="/forgot-password" className="text-sm text-learnsphere-red hover:underline">
+                    <Link to="/forgot-password" className="text-sm text-learnsphere-secondary hover:underline">
                       Forgot Password?
                     </Link>
                   </div>
@@ -63,7 +63,7 @@ const Login = () => {
                     type="password"
                     id="password"
                     name="password"
-                    className="w-full bg-learnsphere-black text-learnsphere-white border border-learnsphere-gray/30 rounded px-3 py-2 focus:outline-none focus:border-learnsphere-red"
+                    className="w-full bg-learnsphere-primary text-learnsphere-white border border-learnsphere-gray/30 rounded px-3 py-2 focus:outline-none focus:border-learnsphere-secondary"
                     placeholder="********"
                     required
                     value={formData.password}
@@ -84,14 +84,14 @@ const Login = () => {
                 </div>
                 <button
                   type="submit"
-                  className="w-full bg-learnsphere-red text-learnsphere-white py-3 rounded font-medium btn-hover-effect"
+                  className="w-full bg-learnsphere-secondary text-learnsphere-white py-3 rounded font-medium btn-hover-effect"
                 >
                   Log In
                 </button>
               </form>
               <p className="text-center mt-6 text-learnsphere-gray">
                 Don't have an account?{' '}
-                <Link to="/signup" className="text-learnsphere-red hover:underline">
+                <Link to="/signup" className="text-learnsphere-secondary hover:underline">
                   Sign up
                 </Link>
               </p>

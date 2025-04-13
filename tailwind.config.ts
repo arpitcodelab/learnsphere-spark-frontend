@@ -53,13 +53,14 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				// Custom colors for LearnSphere
+				// Updated colors for LearnSphere
 				learnsphere: {
-					black: "#1A1A1A",
-					red: "#8B0000",
-					blue: "#1C2526",
-					white: "#F5F5F5",
-					gray: "#D3D3D3"
+					primary: "#19192e", // Main background color
+					secondary: "#003e91", // Accent color (replaces red)
+					tertiary: "#002063", // Secondary elements
+					card: "#041642", // Card background
+					white: "#F5F5F5", // Maintaining white text
+					gray: "#D3D3D3" // Maintaining gray for subdued text
 				}
 			},
 			borderRadius: {

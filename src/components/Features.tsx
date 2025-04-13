@@ -10,8 +10,8 @@ interface FeatureCardProps {
 
 const FeatureCard = ({ icon, title, description }: FeatureCardProps) => {
   return (
-    <div className="bg-learnsphere-blue p-6 rounded-lg border border-learnsphere-red/20 card-hover-effect">
-      <div className="text-learnsphere-red mb-4">{icon}</div>
+    <div className="bg-learnsphere-card p-6 rounded-lg border border-learnsphere-secondary/20 card-hover-effect">
+      <div className="text-learnsphere-secondary mb-4">{icon}</div>
       <h3 className="text-xl font-semibold mb-2">{title}</h3>
       <p className="text-learnsphere-gray">{description}</p>
     </div>
@@ -53,7 +53,7 @@ const Features = () => {
   ];
 
   return (
-    <section className="py-20 bg-learnsphere-black">
+    <section className="py-20 bg-learnsphere-primary">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Choose LearnSphere</h2>

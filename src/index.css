@@ -97,22 +97,22 @@
   }
 
   body {
-    @apply bg-learnsphere-black text-learnsphere-white font-sans;
+    @apply bg-learnsphere-primary text-learnsphere-white font-sans;
   }
 
   /* Button Animation */
   .btn-hover-effect {
-    @apply transition-all duration-300 hover:scale-110 hover:shadow-[0_0_12px_rgba(255,255,255,0.4)];
+    @apply transition-all duration-300 hover:scale-110 hover:shadow-[0_0_12px_rgba(0,62,145,0.6)];
   }
 
   /* Card Animation */
   .card-hover-effect {
-    @apply transition-all duration-300 hover:scale-105 hover:shadow-[0_0_15px_rgba(139,0,0,0.5)];
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-[0_0_15px_rgba(0,62,145,0.5)];
   }
 
   /* Nav Link Animation */
   .nav-link-hover {
-    @apply transition-all duration-300 hover:text-learnsphere-red hover:shadow-[0_0_8px_rgba(139,0,0,0.5)];
+    @apply transition-all duration-300 hover:text-learnsphere-secondary hover:shadow-[0_0_8px_rgba(0,62,145,0.5)];
   }
 
   /* Import Montserrat font */

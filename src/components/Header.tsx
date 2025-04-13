@@ -7,11 +7,11 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-learnsphere-black bg-opacity-95 border-b border-learnsphere-red/30">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-learnsphere-primary bg-opacity-95 border-b border-learnsphere-secondary/30">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <Link to="/" className="flex items-center">
           <span className="text-2xl font-bold text-learnsphere-white">
-            Learn<span className="text-learnsphere-red">Sphere</span>
+            Learn<span className="text-learnsphere-secondary">Sphere</span>
           </span>
         </Link>
 
@@ -25,7 +25,7 @@ const Header = () => {
           </Link>
           <Link 
             to="/login" 
-            className="bg-learnsphere-red text-learnsphere-white px-4 py-2 rounded btn-hover-effect"
+            className="bg-learnsphere-secondary text-learnsphere-white px-4 py-2 rounded btn-hover-effect"
           >
             Login
           </Link>
@@ -42,7 +42,7 @@ const Header = () => {
 
       {/* Mobile Navigation Menu */}
       {isOpen && (
-        <div className="md:hidden bg-learnsphere-blue/90 backdrop-blur-sm">
+        <div className="md:hidden bg-learnsphere-tertiary/90 backdrop-blur-sm">
           <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
             <Link 
               to="/#pricing" 
@@ -60,7 +60,7 @@ const Header = () => {
             </Link>
             <Link 
               to="/login" 
-              className="bg-learnsphere-red text-learnsphere-white px-4 py-2 rounded text-center"
+              className="bg-learnsphere-secondary text-learnsphere-white px-4 py-2 rounded text-center"
               onClick={() => setIsOpen(false)}
             >
               Login
