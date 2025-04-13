@@ -1,8 +1,10 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Hero = () => {
+  const [isClicked, setIsClicked] = useState(false);
+  
   return (
     <section className="pt-32 pb-24 bg-learnsphere-primary relative overflow-hidden">
       {/* Background elements with increased opacity and blur for glassy effect */}
@@ -21,7 +23,9 @@ const Hero = () => {
           </p>
           <Link
             to="/signup"
-            className="inline-flex items-center justify-center bg-learnsphere-secondary/90 backdrop-blur-sm text-learnsphere-white px-8 py-4 rounded-md text-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(0,62,145,0.6)] border border-learnsphere-secondary/30"
+            className={`inline-flex items-center justify-center bg-learnsphere-secondary/90 backdrop-blur-sm text-learnsphere-white px-8 py-4 text-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(0,62,145,0.6)] border border-learnsphere-secondary/30 ${isClicked ? 'rounded-full' : 'rounded-md'}`}
+            onClick={() => setIsClicked(true)}
+            onMouseLeave={() => setIsClicked(false)}
           >
             Try for Free
           </Link>
