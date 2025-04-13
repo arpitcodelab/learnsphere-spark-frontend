@@ -1,60 +1,9 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Hero = () => {
   const [isClicked, setIsClicked] = useState(false);
-  const [displayText, setDisplayText] = useState('');
-  const [isTypingComplete, setIsTypingComplete] = useState(false);
-  
-  const fullText = "Master New Skills with LearnSphere";
-  
-  useEffect(() => {
-    // Animation function that handles the typing effect
-    const startTypingAnimation = () => {
-      // Reset state for new animation cycle
-      setDisplayText('');
-      setIsTypingComplete(false);
-      
-      let i = 0;
-      // Type each character one by one
-      const typingInterval = setInterval(() => {
-        if (i < fullText.length) {
-          setDisplayText(prev => prev + fullText.charAt(i));
-          i++;
-        } else {
-          clearInterval(typingInterval);
-          setIsTypingComplete(true);
-        }
-      }, 100);
-      
-      return typingInterval;
-    };
-    
-    // Start initial animation with a small delay
-    const initialDelay = setTimeout(() => {
-      const typingInterval = startTypingAnimation();
-      
-      // Set up the repeating animation cycle
-      const animationCycle = setInterval(() => {
-        // Wait for current typing to finish, then clear and restart
-        clearInterval(typingInterval);
-        setDisplayText('');
-        setIsTypingComplete(false);
-        
-        // Short pause before starting the next typing cycle
-        setTimeout(startTypingAnimation, 500);
-      }, 6000); // Repeat every 6 seconds
-      
-      // Clean up all intervals and timeouts on unmount
-      return () => {
-        clearInterval(typingInterval);
-        clearInterval(animationCycle);
-      };
-    }, 500);
-    
-    return () => clearTimeout(initialDelay);
-  }, []); // Only run once when component mounts
   
   return (
     <section className="pt-32 pb-24 bg-learnsphere-primary relative overflow-hidden">
@@ -66,11 +15,8 @@ const Hero = () => {
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-3xl mx-auto text-center animate-fade-in">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 min-h-[4rem]">
-            {displayText}
-            {!isTypingComplete && (
-              <span className="inline-block w-1 h-8 ml-1 bg-learnsphere-secondary animate-pulse"></span>
-            )}
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+            Master New Skills with LearnSphere
           </h1>
           <p className="text-learnsphere-gray text-lg md:text-xl mb-10">
             Flexible plans for every learner. Join thousands of students already unlocking their potential.
